@@ -13,6 +13,12 @@ public class GravityController : MonoBehaviour
     void Start()
     {
         _moveAction = InputSystem.actions.FindAction("move");
+    
+        // 加速度センサーを有効化
+        if (Accelerometer.current != null)
+        {
+            InputSystem.EnableDevice(Accelerometer.current);
+        }
     }
 
     void Update()
