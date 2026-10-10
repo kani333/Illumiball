@@ -24,12 +24,13 @@ public class GravityController : MonoBehaviour
     void Update()
     {
         Vector3 vector = new Vector3();
+
         if (Application.isMobilePlatform)
         {
             //モバイルの場合は加速度センサーの値を取得
             vector.x = Accelerometer.current.acceleration.ReadValue().x;
-            vector.y = Accelerometer.current.acceleration.ReadValue().y;
-            vector.z = Accelerometer.current.acceleration.ReadValue().z;
+            vector.z = Accelerometer.current.acceleration.ReadValue().y;
+            vector.y = Accelerometer.current.acceleration.ReadValue().z;
         }
         else
         {
